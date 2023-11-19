@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 def get_clean_data():
 
-    df = pd.read_csv('data.csv')
+    df = pd.read_csv('data/data.csv')
     df = df.drop(['Unnamed: 32', 'id'], axis=1)
     df['diagnosis'] = df['diagnosis'].map({'M': 1, 'B': 0})  # convert Malignant to 1 and benign to 0
     return df
