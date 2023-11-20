@@ -121,9 +121,9 @@ def add_predictions(input_data):
     st.subheader("Cell cluster prediction ")
     st.write("the cell cluster is:")
     if prediction[0]==0:
-        st.write("Benign")
+        st.write("Benign 😄")
     else:
-        st.write("malignant")
+        st.write("malignant 😢")
     
     st.write("Probability of being benign:",model.predict_proba(scaled_input_array)[0][0])
     st.write("Probability of being malignant:",model.predict_proba(scaled_input_array)[0][1])
