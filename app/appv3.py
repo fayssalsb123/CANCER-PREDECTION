@@ -123,7 +123,7 @@ def type_selection():
     selected_cancer = st.sidebar.selectbox("Sélectionnez le type de cancer", ["Breast Cancer", "Skin Cancer", "Lung Cancer"])
     return selected_cancer
 def description():
-    st.markdown("<h1 style='color: #ff5733;'>----------CancerPredictor----------</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='color: #ff5733; text-align: center;'>CancerPredictor</h1>", unsafe_allow_html=True)
     st.markdown("<h2 style='color: #3366cc;'>Bienvenue dans l'application CancerPredictor!</h2>", unsafe_allow_html=True)
     st.markdown(
         """
