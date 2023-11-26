@@ -5,15 +5,19 @@ import pickle
 import numpy as np
 
 def add_predictions(input_data):
-    model = pickle.load(open("model/model.pkl", "rb"))
-    scaler = pickle.load(open("model/scaler.pkl", "rb"))
+    model = pickle.load(open("C:/Users/HP/OneDrive/Bureau/Projet IA/model/model.pkl", "rb"))
+    scaler = pickle.load(open("C:/Users/HP/OneDrive/Bureau/Projet IA/model/scaler.pkl", "rb"))
 
     input_array = np.array(list(input_data.values())).reshape(1, -1)
     scaled_input_array = scaler.transform(input_array)
 
     prediction = model.predict(scaled_input_array)
-    st.subheader("Cell cluster prediction ")
-    st.write("the cell cluster is:")
+    
+    st.markdown("<br><br><br><br><br><br><br>", unsafe_allow_html=True)
+    
+    st.subheader("RÉSULTATS:")
+    st.write("Le resultat de diagnostic est:")
+    
     if prediction[0] == 0:
         st.write("Benign")
     else:
@@ -21,10 +25,9 @@ def add_predictions(input_data):
 
     st.write("Probability of being benign:", model.predict_proba(scaled_input_array)[0][0])
     st.write("Probability of being malignant:", model.predict_proba(scaled_input_array)[0][1])
-    st.write("this app can assist medical professional in making a diagnosis, but should not be used as a substitute for professional diagnosis")
-
+    
 def add_sidebar(data):
-    st.sidebar.header("Cell Nuclei Measurements")
+    st.sidebar.header("RESULTATS")
     input_dict = {}
     column_names = data.columns[1:]
     sliders_labels = [(f"{column} (mean)", column) for column in column_names]
@@ -127,11 +130,13 @@ def description():
         
         <p>Cette application vise à prédire le type de cancer (Breast Cancer, Skin Cancer, Lung Cancer) en se basant sur les caractéristiques des cellules.</p>
         <p>Sélectionnez le type de cancer dans le menu à gauche, ajustez les caractéristiques des cellules à l'aide des sliders, puis cliquez sur "Commencer" pour obtenir des prédictions.</p>
-        <p>Les données utilisées dans cette application sont collecter à partir de kaggle .</p>
+        <p>Les données utilisées dans cette application sont basées sur [précisez la source des données].</p>
         <p>Il est important de noter que les prédictions fournies par cette application sont basées sur des modèles statistiques et ne doivent pas remplacer un diagnostic professionnel.</p>
         <p>Consultez toujours un professionnel de la santé qualifié pour un diagnostic précis.</p>
         """
     , unsafe_allow_html=True)
+    st.markdown("Cette application reste un outil d'aide à la décision qui peut aider les professionnels de la santé dans le processus de diagnostic, mais ne doit pas être utilisée comme substitut à un diagnostic professionnel.", unsafe_allow_html=True)
+    
 
     
 
@@ -141,7 +146,7 @@ def display_cancer_data(cancer_type):
         data = get_clean_data()
         input_data = add_sidebar(data)
         st.title("Breast Cancer Predictor")
-        st.write("Please connect this app to your cytology lab to help diagnose from your tissue sample.")
+        
         col1, col2 = st.columns([4, 1])
         with col1:
             radar_chart = get_radar_chart(input_data)
@@ -149,7 +154,7 @@ def display_cancer_data(cancer_type):
         with col2:
                    add_predictions(input_data)
     elif cancer_type == 'Skin Cancer':
-        st.title("Skin Cancer Predictor")
+        st.title("skin Cancer Predictor")
         st.subheader(f"Les Données du {cancer_type} ne sont pas prêtes pour le moment")
     elif cancer_type == 'Lung Cancer':
         st.title("Lung Cancer Predictor")
