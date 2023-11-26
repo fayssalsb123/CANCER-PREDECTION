@@ -137,7 +137,7 @@ def description():
 
 def display_cancer_data(cancer_type):
     if cancer_type == 'Breast Cancer':
-        st.markdown("<div style='font-size: 24px;'>Données pour le <span style='color: #3366cc;'>Breast Cancer:</span></div>", unsafe_allow_html=True)
+        
         data = get_clean_data()
         input_data = add_sidebar(data)
         st.title("Breast Cancer Predictor")
@@ -149,10 +149,10 @@ def display_cancer_data(cancer_type):
         with col2:
                    add_predictions(input_data)
     elif cancer_type == 'Skin Cancer':
-        st.markdown("<div style='font-size: 24px;'>Données pour le <span style='color: #3366cc;'>Skin Cancer:</span></div>", unsafe_allow_html=True)
+        st.title("Skin Cancer Predictor")
         st.subheader(f"Les Données du {cancer_type} ne sont pas prêtes pour le moment")
     elif cancer_type == 'Lung Cancer':
-        st.markdown("<div style='font-size: 24px;'>Données pour le <span style='color: #3366cc;'>Lung Cancer:</span></div>", unsafe_allow_html=True)
+        st.title("Lung Cancer Predictor")
         st.subheader(f"Les Données du {cancer_type} ne sont pas prêtes pour le moment")
 
 def main():
