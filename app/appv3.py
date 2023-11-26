@@ -5,8 +5,8 @@ import pickle
 import numpy as np
 
 def add_predictions(input_data):
-    model = pickle.load(open("C:/Users/HP/OneDrive/Bureau/Projet IA/model/model.pkl", "rb"))
-    scaler = pickle.load(open("C:/Users/HP/OneDrive/Bureau/Projet IA/model/scaler.pkl", "rb"))
+    model = pickle.load(open("model/model.pkl", "rb"))
+    scaler = pickle.load(open("model/scaler.pkl", "rb"))
 
     input_array = np.array(list(input_data.values())).reshape(1, -1)
     scaled_input_array = scaler.transform(input_array)
