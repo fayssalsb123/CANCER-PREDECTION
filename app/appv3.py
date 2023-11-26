@@ -127,7 +127,7 @@ def description():
         
         <p>Cette application vise à prédire le type de cancer (Breast Cancer, Skin Cancer, Lung Cancer) en se basant sur les caractéristiques des cellules.</p>
         <p>Sélectionnez le type de cancer dans le menu à gauche, ajustez les caractéristiques des cellules à l'aide des sliders, puis cliquez sur "Commencer" pour obtenir des prédictions.</p>
-        <p>Les données utilisées dans cette application sont collecter a partir de kaggle .</p>
+        <p>Les données utilisées dans cette application sont collecter à partir de kaggle .</p>
         <p>Il est important de noter que les prédictions fournies par cette application sont basées sur des modèles statistiques et ne doivent pas remplacer un diagnostic professionnel.</p>
         <p>Consultez toujours un professionnel de la santé qualifié pour un diagnostic précis.</p>
         """
