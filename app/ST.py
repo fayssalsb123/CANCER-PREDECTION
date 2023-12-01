@@ -8,13 +8,9 @@ from streamlit_option_menu import option_menu
 
 with st.sidebar:
     
-    selected = option_menu('Cancer Predictor ',
-                          
-                          ['Home page','Breast Cancer',
-                           'Kidney Cancer',
-                           'Skin Cancer'],
-                          icons=['house','activity','heart','person'],
-                          default_index=0)
+    options = ['Home page', 'Breast Cancer', 'Kidney Cancer', 'Skin Cancer']
+    selected = st.sidebar.selectbox('Cancer Predictor', options)
+
     
 
 if (selected == 'Home page'):
