@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 import numpy as np
-from streamlit_option_menu import option_menu
+
 
 with st.sidebar:
     
