@@ -182,7 +182,7 @@ elif (selected == 'Kidney Cancer'):
 
 #loading saved models
 
- t_model = pickle.load(open('C:/Users/HP/CANCER PRED/kidney cancer/t_model.sav', 'rb'))
+ t_model = pickle.load(open('app/t_model.sav', 'rb'))
 
     
     # page title
